@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Tarjoillaan sisältöjä 12B-hakemiston alta halukkaille
 app.use(express.static("public"))
 
-app.post("/kirjaudu", function (req, res) {
+app.post("/", function (req, res) {
   console.log(req.body.id);
   console.log(req.body.username);
   console.log(req.body.country);

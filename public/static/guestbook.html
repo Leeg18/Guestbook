@@ -19,7 +19,7 @@
 
 <!-- JavaScript + json-->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
-<script type="text/javascript" src="./data.json"></script>
+<!-- <script type="text/javascript" src="./data.json"></script> -->
 
 <script>
 
@@ -30,10 +30,12 @@ var people = [];
 
 $.getJSON('./data.json', function(data) {
 	
+	console.log(data);
 	$.each (data, function(i, f) {
-	   var tblRow = "<tr>" + "<td>" + f.id + "</td>" +
+	
+	   var tblRow = "<tr>" + "<td>" + f.id  + "</td>" +
 		"<td>" + f.country + "</td>" + "<td>" + f.username + "</td>" + "<td>" + f.date + "<td>" + f.message + "</td>" + "</tr>"
-		$(tblRow).appendTo("#userdata tbody");
+		$(tblRow).appendTo("#myTable");
 		
   });
 
@@ -131,7 +133,7 @@ $.getJSON('./data.json', function(data) {
    </div>
 </div>
 
-<select id="myselect" onchange="change_myselect(this.value)">
+<!-- <select id="myselect" onchange="change_myselect(this.value)">
 	<option value="">Choose an option:</option>
 	<option value="id">id</option>
 	<option value="username">username</option>
@@ -139,10 +141,10 @@ $.getJSON('./data.json', function(data) {
 	<option value="date">date</option>
 	<option value="message">message</option>
   </select>
-  
+   -->
   
 
-  <div class="wrapper">
+   <div class="wrapper">
 	<div class="profile">
 	   <table id= "userdata" border="2">
 	  <tr class="bg-info">
@@ -155,8 +157,7 @@ $.getJSON('./data.json', function(data) {
 		  <tbody id="myTable">
 	
 		   </tbody>
-	   </table>
-       
+	   </table> 
 	 
 
 </body>
