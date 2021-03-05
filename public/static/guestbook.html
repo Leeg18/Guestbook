@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Harjoitusmetodit </title>
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://use.fontawesome.com/releaves/v5.0.8/js/all.js"></script>
+
+<!-- JavaScript + json-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<script type="text/javascript" src="./data.json"></script>
+
+<script>
+
+$(function() {
+
+
+var people = [];
+
+$.getJSON('./data.json', function(data) {
+	
+	$.each (data, function(i, f) {
+	   var tblRow = "<tr>" + "<td>" + f.id + "</td>" +
+		"<td>" + f.country + "</td>" + "<td>" + f.username + "</td>" + "<td>" + f.date + "<td>" + f.message + "</td>" + "</tr>"
+		$(tblRow).appendTo("#userdata tbody");
+		
+  });
+
+});
+
+});
+</script>
+
+
+<!-- Stylesheet-->
+<style> 
+	table { 
+		margin: 0 auto; 
+		font-size: large; 
+		border: 1px solid black; 
+	} 
+
+	h1 { 
+		text-align: center; 
+		color: #006600; 
+		font-size: xx-large; 
+		font-family: 'Gill Sans',  
+			'Gill Sans MT', ' Calibri',  
+			'Trebuchet MS', 'sans-serif'; 
+	} 
+
+	td { 
+		background-color: #E4F5D4; 
+		border: 1px solid black; 
+	} 
+
+	th, 
+	td { 
+		font-weight: bold; 
+		border: 1px solid black; 
+		padding: 10px; 
+		text-align: center; 
+	} 
+
+	td { 
+		font-weight: lighter; 
+	} 
+</style> 
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<!-- Oma CSS tiedosto -->
+<link rel="stylesheet" type="text/css" href="/css/testeri.css">
+
+</head>
+
+<body>
+
+<!-- Navigation/header -->
+<header>
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<div class="container-fluid">
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+	 <ul class="navbar-nav ml-auto">
+	    <li class="nav-item">
+		<i class="fas fa-home"></i>
+		  <a class="nav-link" href="/static/index.html">Koti</a></li>
+		</li>	
+         <li class="nav-item">
+		 <i class="fas fa-envelope-square"></i>
+		  <a class="nav-link" href="/static/guestbook.html">Guestbook</a></li>
+		</li>		 
+         <li class="nav-item">
+		 <i class="fas fa-dumbbell"></i>
+		  <a class="nav-link" href="/static/newmessage.html">New Messages</a></li>
+		</li>		
+         <li class="nav-item">
+		 <i class="fas fa-camera-retro"></i>
+		  <a class="nav-link" href="/static/ajaxmessage.html">AJAX Messages</a>
+		</li>		 		
+      </ul>
+ </div>	  
+</div>
+</nav>
+</header>
+
+<!-- Harjoitusmetodit -->
+<div class="row padding">
+    <div class="col-lg-8">
+	   <h2>Guestbook</h2>
+	   <p>Täällä voit keskustella anonyymisti muiden käyttäjien kanssa</p>
+   </div>
+</div>
+
+<select id="myselect" onchange="change_myselect(this.value)">
+	<option value="">Choose an option:</option>
+	<option value="id">id</option>
+	<option value="username">username</option>
+	<option value="country">country</option>
+	<option value="date">date</option>
+	<option value="message">message</option>
+  </select>
+  
+  
+
+  <div class="wrapper">
+	<div class="profile">
+	   <table id= "userdata" border="2">
+	  <tr class="bg-info">
+				<th>id</th>
+				<th>username</th>
+				<th>country</th>
+				<th>date</th>
+				<th>message</th>
+			</tr>
+		  <tbody id="myTable">
+	
+		   </tbody>
+	   </table>
+       
+	 
+
+</body>
+</html>

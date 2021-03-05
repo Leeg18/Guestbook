@@ -1,0 +1,232 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+body {
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+color: #4d4d4d;
+font-family: 'poppins', sans-serif;
+background-color: #e6e6e6;
+}  
+
+header {
+background: #d9d9d9;
+width: 100%;
+}
+
+header::after {
+content: "";
+display: table;
+clear: both;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+text-align: center;
+display: inline-block;
+margin-left: 70px;
+padding-top: 23px;
+position: relative;
+}
+
+nav a {
+color: #99ffcc;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 14px;
+}
+
+nav a::before {
+content: "";
+display: block;
+height: 5px;
+width: 100%;
+background-color: #444;
+position: absolute;
+top: 0;
+width: 0%;
+transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+width: 100%;
+}
+
+.container-fluid {
+	border: 3px solid #99ffcc;
+	color:  #333333;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+	background-color: #e6e6e6;
+}
+
+.carousel-inner img {
+	width: 100%;
+	height: 100%;
+}
+.carousel-caption {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.carousel-caption h1 {
+	font-size: 300%;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 15px #000;
+}
+.carousel-caption h3 {
+	font-size: 200%;
+	font-weight: 500;
+	text-shadow: 1px 1px 10px #000;
+	padding-bottom: 1rem;
+}
+.btn-primary {
+    background-color: #99ffcc;
+	border: 1px solid #99ffcc;
+}
+.btn-primary:hover {
+	background-color: #99ffcc;
+	border: 1px solid #99ffcc;
+}
+.jumbotron {
+	padding: 5rem;
+	border-radius: 4;
+	width: 97%;
+}
+.padding {
+	padding-bottom: 2rem;
+}
+.welcome {
+	width: 75%;
+	margin: 0 auto;
+	padding-top: 2rem;
+	background-color: #99ffcc;
+	color: #4d4d4d;
+}
+.welcome hr {
+	border-top: 2px solid #99ffcc;
+	width: 95%;
+	margin-top: .3rem;
+	margin-bottom: 1rem;
+}
+
+hr.light {
+	border-top: 1px solid #d5d5d5;
+	width: 75%;
+	margin-top: .8rem;
+	margin-bottom: 1rem;
+}
+footer a {
+	color: #99ffcc;
+}
+hr.light-100 {
+	border-top: 1px solid #d5d5d5;
+	width: 100%;
+	margin-top: .8rem;
+	margin-bottom: 1rem;
+}
+.col-md-4 {
+	color: #4d4d4d;
+	background-color: #99ffcc;
+}
+.fas fa-camera-retro {
+	position:relative;
+}
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+	.social a {
+		font-size: 4em;
+		padding: 2rem;
+	}
+}
+@media (max-width: 768px) {
+	.carousel-caption {
+		top: 45%;
+	}
+	.carousel-caption h1 {
+		font-size: 350%;
+	}
+	.carousel-caption h3 {
+		font-size: 140%;
+		font-weight: 400;
+		text-shadow: 1px 1px 10px #000;
+		padding-bottom: .2rem;
+	}
+    .carousel-caption .btn {
+        font-size: 95%;
+        padding: 8px 14px;
+    }
+    .display-4 {
+        font-size: 160%;
+    }
+    .social a {
+        font-size: 2.5em;
+        padding: 1.2rem;
+    }		
+}
+@media (max-width: 576px) {
+.carousel-caption {
+		top: 40%;
+	}
+	.carousel-caption h1 {
+		font-size: 250%;
+	}
+	.carousel-caption h3 {
+		font-size: 140%;
+	}
+    .carousel-caption .btn {
+        font-size: 90%;
+        padding: 4px 8px;
+    }
+    .carousel-indicators {
+		display: none;
+	}	
+}
+
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+	transition: -webkit-transorm 0.5s ease;
+	transition: transform 0.5s ease;
+	transition: transform 0.5s ease, -webkit-transorm 0.5s ease;
+	-webkit-backface-visibility: visible;
+	backface-visibility: visible;
+}
+
+/*--- Bootstrap Padding Fix --*/
+[class*="col"] {
+	padding: 1rem;
+}
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) {...}
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) {...}
+
+Large (lg) devices (desktops, 992px and up)
+@media (min.width: 992px) {...}
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {...}
+*/
+
+
+
+
+
+
+
+

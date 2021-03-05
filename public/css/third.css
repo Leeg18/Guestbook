@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+body {
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+color: #4d4d4d;
+font-family: 'poppins', sans-serif;
+background-color: #e6e6e6;
+}
+  
+header {
+background: #d9d9d9;
+width: 100%;
+}
+
+header::after {
+content: '';
+display: table;
+clear: both;
+}
+
+.logo {
+float: left;
+width: 250px;
+height: 200px;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+text-align: center;
+display: inline-block;
+margin-left: 70px;
+padding-top: 23px;
+position: relative;
+}
+
+nav a {
+	color: #444;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+nav a::before {
+content: "";
+display: block;
+height: 5px;
+width: 100%;
+background-color: #444;
+position: absolute;
+top: 0;
+width: 0%;
+transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+	width: 100%;
+}
+
+h1 {
+	color: #4d4d4d;
+}
+
+.padding {
+	padding-bottom: 2rem;
+}
+
+.container-fluid {
+	border: 3px solid #99ffcc;
+	color:  #333333;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+	background-color: #e6e6e6;
+}
+
+/*--- Bootstrap Padding Fix --*/
+[class*="col"] {
+	padding: 1rem;
+}
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) {...}
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) {...}
+
+Large (lg) devices (desktops, 992px and up)
+@media (min.width: 992px) {...}
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {...}
+*/

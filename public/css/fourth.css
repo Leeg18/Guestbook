@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+body {
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+color: #4d4d4d;
+font-family: 'poppins', sans-serif;
+background-color: #e6e6e6;
+}  
+
+header {
+background: #d9d9d9;
+width: 100%;
+}
+
+header::after {
+content: "";
+display: table;
+clear: both;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+text-align: center;
+display: inline-block;
+margin-left: 70px;
+padding-top: 23px;
+position: relative;
+}
+
+nav a {
+color: #99ffcc;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 14px;
+}
+
+
+nav a::before {
+content: "";
+display: block;
+height: 5px;
+width: 100%;
+background-color: #444;
+position: absolute;
+top: 0;
+width: 0%;
+transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+width: 100%;
+}
+
+.carousel-indicators {
+display: none;
+}
+
+.carousel-inner img {
+width: 50%;
+height: 50%;
+}
+.carousel-caption {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+}
+.carousel-caption h1 {
+font-size: 500%;
+text-transform: uppercase;
+text-shadow: 1px 1px 15px #000;
+}
+.carousel-caption h3 {
+font-size: 200%;
+font-weight: 500;
+text-shadow: 1px 1px 10px #000;
+padding-bottom: 1rem;
+}
+
+/*---Media Queries --*/
+@media (max-width: 576px) {
+.carousel-caption {
+		top: 40%;
+	}
+	.carousel-caption h1 {
+		font-size: 150%;
+	}
+	.carousel-caption h3 {
+		font-size: 100%;
+	}
+    .carousel-indicators {
+		display: none;
+	}	
+}	
+@media (max-width: 768px) {
+	.carousel-caption {
+		top: 45%;
+	}
+	.carousel-caption h1 {
+		font-size: 350%;
+	}
+	.carousel-caption h3 {
+		font-size: 140%;
+		font-weight: 400;
+		text-shadow: 1px 1px 10px #000;
+		padding-bottom: .2rem;
+	}
+    .social a {
+        font-size: 2.5em;
+        padding: 1.2rem;
+    }		
+}
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+	transition: -webkit-transorm 0.5s ease;
+	transition: transform 0.5s ease;
+	transition: transform 0.5s ease, -webkit-transorm 0.5s ease;
+	-webkit-backface-visibility: visible;
+	backface-visibility: visible;
+}
