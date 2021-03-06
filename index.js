@@ -1,10 +1,16 @@
+// Otetaan express-moduuli käyttöön
+var express = require("express");
+
 const request = require("request");
 var http = require('http');
 var data;
 
-
 // Kuunnellaan porttia 3000
 const PORT = process.env.PORT || 3000;
+// Luetaan tiedoston sisältö ohjelmaan
+const app = express();
+
+
 
 
 http
@@ -19,21 +25,16 @@ http
 
       response.end();
      })  
-.listen(process.env.PORT || 5000);
+.listen(PORT || 5000);
 
 // requiring fs
 var fs = require('fs');
 var data = fs.readFileSync('./data.json');
 console.log(data);
 
-// Otetaan express-moduuli käyttöön
-var express = require("express");
 
 // Otettaan body parser käyttöön
 var bodyParser = require("body-parser");
-
-// Luetaan tiedoston sisältö ohjelmaan
-var app = express();
 
 // Otetaan body parser käyttöön app-nimisessä express-sovelluksessa
 app.use(bodyParser.urlencoded({ extended: true }));
