@@ -25,7 +25,7 @@ http
 
       response.end();
      })  
-.listen(PORT || 5000);
+.listen(PORT);
 
 // requiring fs
 var fs = require('fs');
